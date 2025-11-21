@@ -24,6 +24,7 @@ const Text = styled.div`
   font-weight: 500;
   font-size: 20px;
   font-family: "Noto Kufi Arabic", sans-serif;
+  word-wrap: anywhere;
 `;
 const Trash = styled(FaTrash)`
   cursor: pointer;
@@ -48,24 +49,28 @@ function TaskItem({ task, onDelete, onToggle }) {
           color: task.completed ? "gray" : "black",
         }}
       >
-        <Trash onClick={() => onDelete(task.id)} />
+        <div>
+          <Trash onClick={() => onDelete(task.id)} />
+        </div>
         <Box>
           <Text>{task.text}</Text>
-          {task.completed ? (
-            <MdCheckBox
-              size={24}
-              color="green"
-              onClick={() => onToggle(task.id)}
-              style={{ cursor: "pointer" }}
-            />
-          ) : (
-            <MdCheckBoxOutlineBlank
-              size={24}
-              color="gray"
-              onClick={() => onToggle(task.id)}
-              style={{ cursor: "pointer" }}
-            />
-          )}
+          <div>
+            {task.completed ? (
+              <MdCheckBox
+                size={24}
+                color="green"
+                onClick={() => onToggle(task.id)}
+                style={{ cursor: "pointer" }}
+              />
+            ) : (
+              <MdCheckBoxOutlineBlank
+                size={24}
+                color="gray"
+                onClick={() => onToggle(task.id)}
+                style={{ cursor: "pointer" }}
+              />
+            )}
+          </div>
         </Box>
       </ListItem>
     </>
