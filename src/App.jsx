@@ -20,7 +20,7 @@ const MainDiv = styled(motion.div)`
   font-family: "Poppins", sans-serif;
   width: 700px;
   @media (max-width: 768px) {
-    width: 500px;
+    width: 302px;
   }
 `;
 
@@ -41,6 +41,9 @@ const Input = styled.input`
   &:focus {
     outline: none;
   }
+  @media (max-width: 768px) {
+    width: 180px;
+  }
 `;
 const Heading = styled.h1`
   font-family: "Tajawal", sans-serif;
@@ -57,6 +60,9 @@ const Button = styled.button`
   font-family: "Noto Kufi Arabic", sans-serif;
   cursor: pointer;
   transition: border-color 0.25s;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 function App() {
